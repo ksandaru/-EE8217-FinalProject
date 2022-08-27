@@ -3,15 +3,31 @@ package com.softarchi.sensormonitor.Service;
 import com.softarchi.sensormonitor.Model.Sensor;
 import com.softarchi.sensormonitor.Repository.SensorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class SensorService {
     @Autowired
     SensorRepository sensorRepository;
-    public Sensor createSensor(Sensor sensor){
+
+    public Sensor createSensor(Sensor sensor) {
         return sensorRepository.save(sensor);
 
     }
 
+    public List<Sensor> getAllSensor() {
+        return sensorRepository.findAll();
+    }
+
+    public Sensor getSensorById(String id) {
+        if (sensorRepository.findById(id).isPresent()) {
+            return sensorRepository.findById(id).get();
+        } else return null;
+
+    }
 }
