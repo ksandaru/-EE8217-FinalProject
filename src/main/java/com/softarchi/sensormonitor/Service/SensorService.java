@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 @Service
 public class SensorService {
     @Autowired
-    SensorRepository sensorRepository;
+    private SensorRepository sensorRepository;
 
     public Sensor createSensor(Sensor sensor) {
         return sensorRepository.save(sensor);
@@ -21,13 +21,15 @@ public class SensorService {
     }
 
     public List<Sensor> getAllSensor() {
+
         return sensorRepository.findAll();
     }
 
     public Sensor getSensorById(String id) {
-        if (sensorRepository.findById(id).isPresent()) {
             return sensorRepository.findById(id).get();
-        } else return null;
 
+    }
+    public void delete(String id){
+        sensorRepository.deleteById(id);
     }
 }
