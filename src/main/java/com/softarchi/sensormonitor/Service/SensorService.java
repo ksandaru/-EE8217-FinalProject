@@ -3,6 +3,7 @@ package com.softarchi.sensormonitor.Service;
 import com.softarchi.sensormonitor.Model.Sensor;
 import com.softarchi.sensormonitor.Repository.SensorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -31,5 +32,9 @@ public class SensorService {
     }
     public void delete(String id){
         sensorRepository.deleteById(id);
+    }
+
+    public long getSensorCount() {
+        return sensorRepository.count();
     }
 }

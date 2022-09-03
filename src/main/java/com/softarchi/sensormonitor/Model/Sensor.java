@@ -18,9 +18,9 @@ public class Sensor {
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @JsonFormat(pattern = "MM/dd/yyyy")
     private Date date= new Date();
-    private String data_value;
+    private Integer data_value;
 
-    public Sensor(String id, String sensor_id, Date date, String data_value) {
+    public Sensor(String id, String sensor_id, Date date, Integer data_value) {
         this.id = id;
         this.sensor_id = sensor_id;
         //this.date = date;
@@ -52,11 +52,11 @@ public class Sensor {
         this.date = date;
     }
 
-    public String getData_value() {
+    public Integer getData_value() {
         return data_value;
     }
 
-    public void setData_value(String data_value) {
+    public void setData_value(Integer data_value) {
         this.data_value = data_value;
     }
 }
