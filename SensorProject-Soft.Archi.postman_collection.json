@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"sensor_id\": \"2\",\r\n    \"data_value\":\"35C\"\r\n\r\n}",
+					"raw": "{\r\n    \"sensor_id\": \"11\",\r\n    \"data_value\":\"50\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,12 +21,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/sensor-data/create",
+					"raw": "http://localhost:8000/api/sensor-data/create",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8000",
 					"path": [
 						"api",
 						"sensor-data",
@@ -54,17 +54,17 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/sensor-data/get-sensor/2",
+					"raw": "http://localhost:8000/api/sensor-data/get-sensor/6309ea793b24632e2562a742",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8000",
 					"path": [
 						"api",
 						"sensor-data",
 						"get-sensor",
-						"2"
+						"6309ea793b24632e2562a742"
 					]
 				}
 			},
@@ -88,12 +88,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/sensor-data/get-all-sensor",
+					"raw": "http://localhost:8000/api/sensor-data/get-all-sensor",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8000",
 					"path": [
 						"api",
 						"sensor-data",
@@ -109,17 +109,38 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/sensor-data/delete-sensor/631240fd26c22460cf8c7268",
+					"raw": "http://localhost:8000/api/sensor-data/delete-sensor/6312696dfedc9c6bb8009e87",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8000",
 					"path": [
 						"api",
 						"sensor-data",
 						"delete-sensor",
-						"631240fd26c22460cf8c7268"
+						"6312696dfedc9c6bb8009e87"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-sensor-count",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/sensor-data/get-sensor-count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"sensor-data",
+						"get-sensor-count"
 					]
 				}
 			},
